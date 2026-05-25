@@ -1,0 +1,344 @@
+{% load static %}
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koleksi Wewangian | Aromas Parfume</title>
+    <!-- Google Fonts: Playfair Display untuk Headline, Montserrat untuk Body -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <!-- Link CSS Murni (Sesuaikan path folder static Django Anda) -->
+    <link rel="stylesheet" href="{% static 'pages/css/products.css' %}" />
+
+    <!-- Fallback stylesheet jika Anda ingin melihat preview HTML ini secara local langsung di browser tanpa menjalankan server Django -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <body>
+    <!-- Header / Navigation Bar -->
+    <header class="header-nav">
+      <nav class="navbar-container">
+        <a href="/" class="logo-block">
+          <!-- Image Logo. Anda bisa mengganti source image ke statik Django jika Anda mengunduhnya -->
+          <img
+            src="{% static 'pages/images/aromasparfume.jpg' %}"
+            alt="Aromas Parfume Logo"
+            class="logo-img"
+            style="border-radius: 50%"
+          />
+          <span class="brand-title">Aromas Parfume</span>
+        </a>
+
+        <ul class="nav-links">
+          <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a href="{% url 'products' %}" class="active">Products</a></li>
+          <li class="nav-item"><a href="#">About</a></li>
+          <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Search">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+          <button class="icon-btn" aria-label="Shopping Bag">
+            <span class="material-symbols-outlined">shopping_bag</span>
+          </button>
+          <button class="icon-btn" aria-label="Account">
+            <span class="material-symbols-outlined">person</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- Hero/Title Section -->
+      <section class="hero-section">
+        <h1 class="hero-title">Koleksi Wewangian</h1>
+        <p class="hero-description">
+          Jelajahi kurasi parfum premium kami yang dirancang untuk membangkitkan
+          memori dan mendefinisikan kehadiran Anda.
+          <span class="tagline-italic">*Semua berhak wangi.*</span>
+        </p>
+      </section>
+
+      <!-- Bar Filter & Pengurutan -->
+      <section class="controls-panel">
+        <div class="filter-group">
+          <span class="control-label">Filter:</span>
+          <div class="filter-buttons">
+            <button
+              class="filter-btn active"
+              id="btn-all"
+              onclick="filterCategory('all')"
+            >
+              Semua
+            </button>
+            <button
+              class="filter-btn"
+              id="btn-floral"
+              onclick="filterCategory('floral')"
+            >
+              Floral
+            </button>
+            <button
+              class="filter-btn"
+              id="btn-woody"
+              onclick="filterCategory('woody')"
+            >
+              Woody
+            </button>
+            <button
+              class="filter-btn"
+              id="btn-fresh"
+              onclick="filterCategory('fresh')"
+            >
+              Fresh
+            </button>
+          </div>
+        </div>
+        <div class="sort-group">
+          <span class="control-label">Urutkan:</span>
+          <div class="select-wrapper">
+            <select class="sort-select" onchange="sortProducts(this.value)">
+              <option value="terbaru">Terbaru</option>
+              <option value="terendah">Harga Terendah</option>
+              <option value="tertinggi">Harga Tertinggi</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Katalis Grid Produk -->
+      <section class="products-grid" id="products-grid">
+        <!-- Produk 1 -->
+        <div
+          class="product-card"
+          data-category="floral"
+          data-price="1450000"
+          data-id="1"
+        >
+          <div class="product-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Z7ow8e_rqPXqEJ_izzuIg8n2MmLyrOKD3W7RnQ7l31X7xujBG6w1oNKUPex8pWjuwrHzzg6AVKJr-feFnQ5rw5_WpB8om9eQIvlacMFYAe5jajNiJ2WVIQYOCrWIcYpwV1u0SgMGHv6fVp59SLTCeTGUUH5B00-wE8pzBBuz3rLKOju_jl0wCZmFHint6TojCO7WbVR4qZJ2ggIndg5vMgBRPMiVcUXK6LrXAEs5emhwnyeiHvqJjfTgYLFZLcDKIUj999v96h9R"
+              alt="Midnight Jasmine"
+              class="product-image"
+            />
+            <div class="product-badge badge-ready">Ready Stock</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Midnight Jasmine</h3>
+            <p class="product-subtitle">Floral • Eau De Parfum</p>
+            <p class="product-price">Rp 1.450.000</p>
+            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Produk 2 -->
+        <div
+          class="product-card"
+          data-category="woody"
+          data-price="2100000"
+          data-id="2"
+        >
+          <div class="product-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOp_zDakTf6NfZu-o-baSzxtqJdW738KU4e7wbYtfSxKq67d8T-iWkmJKqwpAk9vNpxYowVh-60_gn2mPNPlActckSFRNHIlEV1M7Yoquy24kjldZc6txDthtACQTx_rxmz08Fr6mk2wOuH6hEiGN0oULa7pO-wPcq2kBBSvw32lbc5Ni5cm9TTyvSIFIOzpUVFBy3mtoFaAF-Mok_s-X32sP5AAAGSADvFRFuF5JyB33q1tEgEFt8F3ADZacU4j_IOsAj4ZVBZJuM"
+              alt="Oud Horizon"
+              class="product-image"
+            />
+            <div class="product-badge badge-restocking">Restocking Soon</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Oud Horizon</h3>
+            <p class="product-subtitle">Woody • Extrait De Parfum</p>
+            <p class="product-price">Rp 2.100.000</p>
+            <button class="btn-action btn-notify">Ingatkan Saya</button>
+          </div>
+        </div>
+
+        <!-- Produk 3 -->
+        <div
+          class="product-card"
+          data-category="fresh"
+          data-price="950000"
+          data-id="3"
+        >
+          <div class="product-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcHjvsjRI71LTtiaaG3inntqMvLls3YKOElzO8hOnpcWsk1CLz2v7nIXgJt8ApTwkDff174Ih2v2Sncc0l9tJAacIwgEXCAsuae_xsZmR1_SUcaBKw3RTNP04plZutwYlPhMvIx3KhsTzmJfM7U-O_x6TCIr39chhz1W-o5i64n2OpSXsy6ixEuk5keAmjJkEg9--iV-I2l1HmEWTp6zQKZVA3vjkEXVBhk7qshw2n64pyVr31UaG93qEJXcC1Q1eyzwnK1I7mMOH_"
+              alt="Azure Mist"
+              class="product-image"
+            />
+            <div class="product-badge badge-ready">Ready Stock</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Azure Mist</h3>
+            <p class="product-subtitle">Fresh • Eau De Toilette</p>
+            <p class="product-price">Rp 950.000</p>
+            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Produk 4 -->
+        <div
+          class="product-card"
+          data-category="floral"
+          data-price="1650000"
+          data-id="4"
+        >
+          <div class="product-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuApfkZWylvHPSY2T8w0lHf6007_U-gfQWUh6VIRlVKBxm0G_f0vmuAjrToEVwe9xuDY744ObDga2NxfW8vEtdwRAIO1_B1D3N7N_WCJkQz9NAOCzR6Rm7VB-RUPnC77NmK-K5bwN2M9umsYwDbP9IX6Bl_FxfGOLWocehA4BnHR8zJN_bQdTWpkPOyhSbnmRcPJ1icLnwezYVyQnbWDZN3Fb1vicyXaWVys2xWHtL4guDrpp3AmPZ36YTQGOaX2SRdOd786r7MDfFIB"
+              alt="Rose Velvet"
+              class="product-image"
+            />
+            <div class="product-badge badge-ready">Ready Stock</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Rose Velvet</h3>
+            <p class="product-subtitle">Floral • Eau De Parfum</p>
+            <p class="product-price">Rp 1.650.000</p>
+            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Produk 5 -->
+        <div
+          class="product-card"
+          data-category="woody"
+          data-price="1800000"
+          data-id="5"
+        >
+          <div class="product-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN-e-_nUd1UCiE2FeEzSy1qcibykUh8Z-H4wTQ2kcwcMs433ZWwEeyWtZFVUV2IM2vTlZRoXRclI7gxiwDDStJqieXE3Pp40RM33UrlURjBbbUTDUR6n52VjX9Mq13X_FAYxvnwnPb2aLB_COZGoZijPyYCJa0LsnHoVQ0u1wFALBHNSTDxHOd0k0QesYDCxibpeQ6VbiIz-T__7CTbxP17-59KR-ioMDlka3wAJvaeN3wjLWwXrckYxIBn_TsTXDVEJ2VMMBZaYWb"
+              alt="Silver Sandalwood"
+              class="product-image"
+            />
+            <div class="product-badge badge-ready">Ready Stock</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Silver Sandalwood</h3>
+            <p class="product-subtitle">Woody • Eau De Parfum</p>
+            <p class="product-price">Rp 1.800.000</p>
+            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
+          </div>
+        </div>
+
+        <!-- Produk 6 -->
+        <div
+          class="product-card"
+          data-category="fresh"
+          data-price="1200000"
+          data-id="6"
+        >
+          <div class="product-image-wrapper">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ9TFue7igdSzOJdyjsBNWv2EWrrXFvEVkIwvp5qCcuKD5aR7Z8ipSbVG-B1N-9JqkLZzllrmF_uGvMOLjf0lHI7EyxguXBRp-InhehH4_dECE3_6enuU2wa_9Y0nmBBBIitDCQdyqWrkzPK2pHaCK0-HWSJMFJJiW_4Iu758-IgFJINnQ-28Y79dhVUIM_3D9T2tLPQWblek7xVsSfSMeFSqGJKVYKK2bKi403swmf7HGnijzSxfbU_8OsXSv0EvuD2NbGdq9aFEK"
+              alt="Bamboo Rain"
+              class="product-image"
+            />
+            <div class="product-badge badge-ready">Ready Stock</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Bamboo Rain</h3>
+            <p class="product-subtitle">Fresh • Eau De Toilette</p>
+            <p class="product-price">Rp 1.200.000</p>
+            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scent Profile CTA Card -->
+      <section class="cta-banner">
+        <div class="cta-text">
+          <h2 class="cta-title">Belum yakin dengan pilihan Anda?</h2>
+          <p class="cta-description">
+            Ikuti kuis Scent Profile kami untuk menemukan karakter wangi yang
+            paling sesuai dengan kepribadian Anda.
+          </p>
+        </div>
+        <button class="btn-cta">Temukan Karakter Saya</button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h3 class="footer-logo">Aromas Parfume</h3>
+          <p class="copyright">© 2024 Aromas Parfume. Semua berhak wangi.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Shipping & Returns</a>
+          <a href="#">Instagram</a>
+          <a href="#">Wholesale</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script Filter dan Pengurutan (Vanilla JS) -->
+    <script>
+      function filterCategory(category) {
+        // Update tombol filter aktif
+        const buttons = document.querySelectorAll(".filter-btn");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+
+        const activeBtn = document.getElementById("btn-" + category);
+        if (activeBtn) activeBtn.classList.add("active");
+
+        // Filter kartu produk
+        const cards = document.querySelectorAll(".product-card");
+        cards.forEach((card) => {
+          const cardCategory = card.getAttribute("data-category");
+          if (category === "all" || cardCategory === category) {
+            card.style.display = "block";
+            card.classList.add("animate-fade");
+          } else {
+            card.style.display = "none";
+            card.classList.remove("animate-fade");
+          }
+        });
+      }
+
+      function sortProducts(criteria) {
+        const grid = document.getElementById("products-grid");
+        const cards = Array.from(grid.querySelectorAll(".product-card"));
+
+        if (criteria === "terbaru") {
+          // Urutkan berdasarkan ID awal (default order)
+          cards.sort((a, b) => {
+            const idA = parseInt(a.getAttribute("data-id"));
+            const idB = parseInt(b.getAttribute("data-id"));
+            return idA - idB;
+          });
+        } else if (criteria === "terendah") {
+          // Harga Terendah -> Tertinggi
+          cards.sort((a, b) => {
+            const priceA = parseInt(a.getAttribute("data-price"));
+            const priceB = parseInt(b.getAttribute("data-price"));
+            return priceA - priceB;
+          });
+        } else if (criteria === "tertinggi") {
+          // Harga Tertinggi -> Terendah
+          cards.sort((a, b) => {
+            const priceA = parseInt(a.getAttribute("data-price"));
+            const priceB = parseInt(b.getAttribute("data-price"));
+            return priceB - priceA;
+          });
+        }
+
+        // Lampirkan kembali kartu-kartu yang sudah diurutkan ke grid
+        cards.forEach((card) => grid.appendChild(card));
+      }
+    </script>
+  </body>
+</html>

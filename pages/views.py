@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def home_view(request):
     return render(request, 'pages/home.html')
+
+def products_view(request):
+    return render(request, 'pages/products.html')
