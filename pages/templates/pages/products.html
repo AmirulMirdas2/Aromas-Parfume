@@ -116,143 +116,35 @@
 
       <!-- Katalis Grid Produk -->
       <section class="products-grid" id="products-grid">
-        <!-- Produk 1 -->
-        <div
-          class="product-card"
-          data-category="floral"
-          data-price="1450000"
-          data-id="1"
-        >
-          <div class="product-image-wrapper">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Z7ow8e_rqPXqEJ_izzuIg8n2MmLyrOKD3W7RnQ7l31X7xujBG6w1oNKUPex8pWjuwrHzzg6AVKJr-feFnQ5rw5_WpB8om9eQIvlacMFYAe5jajNiJ2WVIQYOCrWIcYpwV1u0SgMGHv6fVp59SLTCeTGUUH5B00-wE8pzBBuz3rLKOju_jl0wCZmFHint6TojCO7WbVR4qZJ2ggIndg5vMgBRPMiVcUXK6LrXAEs5emhwnyeiHvqJjfTgYLFZLcDKIUj999v96h9R"
-              alt="Midnight Jasmine"
-              class="product-image"
-            />
-            <div class="product-badge badge-ready">Ready Stock</div>
+        {% if products %}
+          {% for product in products %}
+          <div
+            class="product-card"
+            data-category="all"
+            data-price="{{ product.price|floatformat:0 }}"
+            data-id="{{ product.id }}"
+          >
+            <div class="product-image-wrapper">
+              <img
+                src="{{ product.image_url }}"
+                alt="{{ product.name }}"
+                class="product-image"
+              />
+              <div class="product-badge badge-ready">Ready Stock</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">{{ product.name }}</h3>
+              <p class="product-subtitle">{{ product.description }}</p>
+              <p class="product-price">Rp {{ product.price|floatformat:0 }}</p>
+              <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
+            </div>
           </div>
-          <div class="product-info">
-            <h3 class="product-name">Midnight Jasmine</h3>
-            <p class="product-subtitle">Floral • Eau De Parfum</p>
-            <p class="product-price">Rp 1.450.000</p>
-            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
+          {% endfor %}
+        {% else %}
+          <div class="no-products" style="text-align: center; width: 100%; grid-column: 1 / -1; font-size: 1.5rem; color: #555; padding: 2rem;">
+            tidak ada barang
           </div>
-        </div>
-
-        <!-- Produk 2 -->
-        <div
-          class="product-card"
-          data-category="woody"
-          data-price="2100000"
-          data-id="2"
-        >
-          <div class="product-image-wrapper">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOp_zDakTf6NfZu-o-baSzxtqJdW738KU4e7wbYtfSxKq67d8T-iWkmJKqwpAk9vNpxYowVh-60_gn2mPNPlActckSFRNHIlEV1M7Yoquy24kjldZc6txDthtACQTx_rxmz08Fr6mk2wOuH6hEiGN0oULa7pO-wPcq2kBBSvw32lbc5Ni5cm9TTyvSIFIOzpUVFBy3mtoFaAF-Mok_s-X32sP5AAAGSADvFRFuF5JyB33q1tEgEFt8F3ADZacU4j_IOsAj4ZVBZJuM"
-              alt="Oud Horizon"
-              class="product-image"
-            />
-            <div class="product-badge badge-restocking">Restocking Soon</div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Oud Horizon</h3>
-            <p class="product-subtitle">Woody • Extrait De Parfum</p>
-            <p class="product-price">Rp 2.100.000</p>
-            <button class="btn-action btn-notify">Ingatkan Saya</button>
-          </div>
-        </div>
-
-        <!-- Produk 3 -->
-        <div
-          class="product-card"
-          data-category="fresh"
-          data-price="950000"
-          data-id="3"
-        >
-          <div class="product-image-wrapper">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcHjvsjRI71LTtiaaG3inntqMvLls3YKOElzO8hOnpcWsk1CLz2v7nIXgJt8ApTwkDff174Ih2v2Sncc0l9tJAacIwgEXCAsuae_xsZmR1_SUcaBKw3RTNP04plZutwYlPhMvIx3KhsTzmJfM7U-O_x6TCIr39chhz1W-o5i64n2OpSXsy6ixEuk5keAmjJkEg9--iV-I2l1HmEWTp6zQKZVA3vjkEXVBhk7qshw2n64pyVr31UaG93qEJXcC1Q1eyzwnK1I7mMOH_"
-              alt="Azure Mist"
-              class="product-image"
-            />
-            <div class="product-badge badge-ready">Ready Stock</div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Azure Mist</h3>
-            <p class="product-subtitle">Fresh • Eau De Toilette</p>
-            <p class="product-price">Rp 950.000</p>
-            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
-          </div>
-        </div>
-
-        <!-- Produk 4 -->
-        <div
-          class="product-card"
-          data-category="floral"
-          data-price="1650000"
-          data-id="4"
-        >
-          <div class="product-image-wrapper">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuApfkZWylvHPSY2T8w0lHf6007_U-gfQWUh6VIRlVKBxm0G_f0vmuAjrToEVwe9xuDY744ObDga2NxfW8vEtdwRAIO1_B1D3N7N_WCJkQz9NAOCzR6Rm7VB-RUPnC77NmK-K5bwN2M9umsYwDbP9IX6Bl_FxfGOLWocehA4BnHR8zJN_bQdTWpkPOyhSbnmRcPJ1icLnwezYVyQnbWDZN3Fb1vicyXaWVys2xWHtL4guDrpp3AmPZ36YTQGOaX2SRdOd786r7MDfFIB"
-              alt="Rose Velvet"
-              class="product-image"
-            />
-            <div class="product-badge badge-ready">Ready Stock</div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Rose Velvet</h3>
-            <p class="product-subtitle">Floral • Eau De Parfum</p>
-            <p class="product-price">Rp 1.650.000</p>
-            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
-          </div>
-        </div>
-
-        <!-- Produk 5 -->
-        <div
-          class="product-card"
-          data-category="woody"
-          data-price="1800000"
-          data-id="5"
-        >
-          <div class="product-image-wrapper">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN-e-_nUd1UCiE2FeEzSy1qcibykUh8Z-H4wTQ2kcwcMs433ZWwEeyWtZFVUV2IM2vTlZRoXRclI7gxiwDDStJqieXE3Pp40RM33UrlURjBbbUTDUR6n52VjX9Mq13X_FAYxvnwnPb2aLB_COZGoZijPyYCJa0LsnHoVQ0u1wFALBHNSTDxHOd0k0QesYDCxibpeQ6VbiIz-T__7CTbxP17-59KR-ioMDlka3wAJvaeN3wjLWwXrckYxIBn_TsTXDVEJ2VMMBZaYWb"
-              alt="Silver Sandalwood"
-              class="product-image"
-            />
-            <div class="product-badge badge-ready">Ready Stock</div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Silver Sandalwood</h3>
-            <p class="product-subtitle">Woody • Eau De Parfum</p>
-            <p class="product-price">Rp 1.800.000</p>
-            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
-          </div>
-        </div>
-
-        <!-- Produk 6 -->
-        <div
-          class="product-card"
-          data-category="fresh"
-          data-price="1200000"
-          data-id="6"
-        >
-          <div class="product-image-wrapper">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ9TFue7igdSzOJdyjsBNWv2EWrrXFvEVkIwvp5qCcuKD5aR7Z8ipSbVG-B1N-9JqkLZzllrmF_uGvMOLjf0lHI7EyxguXBRp-InhehH4_dECE3_6enuU2wa_9Y0nmBBBIitDCQdyqWrkzPK2pHaCK0-HWSJMFJJiW_4Iu758-IgFJINnQ-28Y79dhVUIM_3D9T2tLPQWblek7xVsSfSMeFSqGJKVYKK2bKi403swmf7HGnijzSxfbU_8OsXSv0EvuD2NbGdq9aFEK"
-              alt="Bamboo Rain"
-              class="product-image"
-            />
-            <div class="product-badge badge-ready">Ready Stock</div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Bamboo Rain</h3>
-            <p class="product-subtitle">Fresh • Eau De Toilette</p>
-            <p class="product-price">Rp 1.200.000</p>
-            <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
-          </div>
-        </div>
+        {% endif %}
       </section>
 
       <!-- Scent Profile CTA Card -->
