@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_filters %}
 <!doctype html>
 <html lang="id">
   <head>
@@ -69,39 +70,7 @@
 
       <!-- Bar Filter & Pengurutan -->
       <section class="controls-panel">
-        <div class="filter-group">
-          <span class="control-label">Filter:</span>
-          <div class="filter-buttons">
-            <button
-              class="filter-btn active"
-              id="btn-all"
-              onclick="filterCategory('all')"
-            >
-              Semua
-            </button>
-            <button
-              class="filter-btn"
-              id="btn-floral"
-              onclick="filterCategory('floral')"
-            >
-              Floral
-            </button>
-            <button
-              class="filter-btn"
-              id="btn-woody"
-              onclick="filterCategory('woody')"
-            >
-              Woody
-            </button>
-            <button
-              class="filter-btn"
-              id="btn-fresh"
-              onclick="filterCategory('fresh')"
-            >
-              Fresh
-            </button>
-          </div>
-        </div>
+
         <div class="sort-group">
           <span class="control-label">Urutkan:</span>
           <div class="select-wrapper">
@@ -134,8 +103,8 @@
             </div>
             <div class="product-info">
               <h3 class="product-name">{{ product.name }}</h3>
-              <p class="product-subtitle">{{ product.description }}</p>
-              <p class="product-price">Rp {{ product.price|floatformat:0 }}</p>
+              <p class="product-subtitle">{{ product.description|truncatewords:15 }}</p>
+              <p class="product-price">Rp {{ product.price|rupiah_format }}</p>
               <button class="btn-action btn-add-cart">Tambah Ke Keranjang</button>
             </div>
           </div>
@@ -179,27 +148,7 @@
 
     <!-- Script Filter dan Pengurutan (Vanilla JS) -->
     <script>
-      function filterCategory(category) {
-        // Update tombol filter aktif
-        const buttons = document.querySelectorAll(".filter-btn");
-        buttons.forEach((btn) => btn.classList.remove("active"));
 
-        const activeBtn = document.getElementById("btn-" + category);
-        if (activeBtn) activeBtn.classList.add("active");
-
-        // Filter kartu produk
-        const cards = document.querySelectorAll(".product-card");
-        cards.forEach((card) => {
-          const cardCategory = card.getAttribute("data-category");
-          if (category === "all" || cardCategory === category) {
-            card.style.display = "block";
-            card.classList.add("animate-fade");
-          } else {
-            card.style.display = "none";
-            card.classList.remove("animate-fade");
-          }
-        });
-      }
 
       function sortProducts(criteria) {
         const grid = document.getElementById("products-grid");
