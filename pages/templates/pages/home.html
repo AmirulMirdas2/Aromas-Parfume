@@ -1,323 +1,281 @@
 {% load static %}
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aromas Parfume | Semua Berhak Wangi</title>
-    <!-- Fonts Google: Playfair Display & Montserrat -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Material Icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
 
-    <!-- Tag Statik bawaan Django untuk merujuk ke style.css -->
-    <link rel="stylesheet" href="{% static 'pages/css/style.css' %}" />
-  </head>
-  <body>
-    <!-- Header Navigation -->
-    <header class="header-nav">
-      <nav class="navbar-container">
-        <a href="/" class="logo-block">
-          <!-- Image Logo. Anda bisa mengganti source image ke statik Django jika Anda mengunduhnya -->
-          <img
-            src="{% static 'pages/images/aromasparfume.jpg' %}"
-            alt="Aromas Parfume Logo"
-            class="logo-img"
-            style="border-radius: 50%"
-          />
-          <span class="brand-title">Aromas Parfume</span>
-        </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aromas Parfume | Semua Berhak Wangi</title>
+  <!-- Fonts Google: Playfair Display & Montserrat -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Google Material Icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-        <ul class="nav-links">
-          <li class="nav-item"><a href="{% url 'home' %}" class="active">Home</a></li>
-          <li class="nav-item"><a href="{% url 'products' %}">Products</a></li>
-          <li class="nav-item"><a href="#">About</a></li>
-          <li class="nav-item"><a href="#">Contact</a></li>
-        </ul>
+  <!-- Tag Statik bawaan Django untuk merujuk ke style.css -->
+  <link rel="stylesheet" href="{% static 'pages/css/style.css' %}" />
+</head>
 
-        <div class="nav-actions">
-          <button class="icon-btn" aria-label="Search">
-            <span class="material-symbols-outlined">search</span>
-          </button>
-          <button class="icon-btn" aria-label="Shopping Bag">
-            <span class="material-symbols-outlined">shopping_bag</span>
-          </button>
-          <button class="icon-btn" aria-label="Account">
-            <span class="material-symbols-outlined">person</span>
-          </button>
-        </div>
-      </nav>
-    </header>
+<body>
+  <!-- Header Navigation -->
+  <header class="header-nav">
+    <nav class="navbar-container">
+      <a href="/" class="logo-block">
+        <!-- Image Logo. Anda bisa mengganti source image ke statik Django jika Anda mengunduhnya -->
+        <img src="{% static 'pages/images/aromasparfume.jpg' %}" alt="Aromas Parfume Logo" class="logo-img"
+          style="border-radius: 50%" />
+        <span class="brand-title">Aromas Parfume</span>
+      </a>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="hero-wrapper">
-        <img
-          class="hero-bg-image"
-          src="{% static 'pages/images/hero section.jpg' %}"
-          alt="Aromas Parfume Base Fragrance Glass Bottle"
-        />
-        <div class="hero-overlay"></div>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="{% url 'home' %}" class="active">Home</a></li>
+        <li class="nav-item"><a href="{% url 'products' %}">Products</a></li>
+        <li class="nav-item"><a href="#">About</a></li>
+        <li class="nav-item"><a href="#">Contact</a></li>
+      </ul>
 
-        <div class="container hero-content">
-          <div class="hero-box">
-            <span class="hero-badge">Exclusive Scent</span>
-            <h1 class="hero-title">Aromas Parfume</h1>
-            <p class="hero-tagline">"Semua berhak wangi"</p>
-
-            <div class="hero-actions">
-              <a href="#" class="btn-solid">Jelajahi Koleksi</a>
-              <a href="#" class="btn-outline">Hubungi Kami</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Editorial Section (Kisah Di Balik Aroma) -->
-      <section class="editorial-section">
-        <div class="container">
-          <div class="editorial-grid">
-            <!-- Lembar Visual Kiri dengan frame artistik -->
-            <div class="editorial-img-side">
-              <div class="img-frame">
-                <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCLpfbTE-p9jBwZQ_FP6eaIpgQtdxNyH6Ia--Rlvpws-Hfkngfhf438A1V60K4d_rrSuA10-ICjXa9Bb0YxO7WgeOTgy33fNXUBFcyXmDt5lnKfOyDc9WQBLXxgbP77u3LsMoPpM_AFpW-JmxbgRB8lFyElQjaKLAvF1yTm3bSk9lhhfpOsfbboDDd1Ky4BBFaeKz54zl8wwwAK7yuTci5dbVhXQn9TQ4wmFSSGfzIWTKykkz_shpVb6WMeYwYMi-qiUxXNMG-vOUb"
-                  alt="Aromas Parfume Olfactory Natural Ingredients"
-                />
-              </div>
-            </div>
-
-            <!-- Content Deskripsi Kanan -->
-            <div class="editorial-text-side">
-              <h2 class="section-title">Kisah Di Balik Aroma</h2>
-              <div class="editorial-body">
-                <p class="editorial-p">
-                  Kami percaya bahwa aroma bukan sekadar wewangian, melainkan
-                  identitas yang melekat. Di Aromas Parfume, visi kami sederhana
-                  namun mendalam:
-                  <span class="highlight-italic">Semua berhak wangi.</span>
-                </p>
-                <p class="editorial-p">
-                  Mewujudkan kemewahan yang dapat diakses, kami meracik setiap
-                  botol dengan ketelitian seorang maestro. Menggunakan
-                  bahan-bahan terbaik dari seluruh penjuru dunia, kami
-                  menciptakan simfoni aroma yang bercerita tentang keanggunan,
-                  keberanian, dan karakter unik Anda.
-                </p>
-                <p class="editorial-p">
-                  Perjalanan kami dimulai dari keinginan untuk mendemokrasi
-                  dunia wewangian premium. Tanpa kompromi pada kualitas, kami
-                  menghadirkan pengalaman sensorik kelas atas untuk setiap momen
-                  berharga dalam hidup Anda.
-                </p>
-              </div>
-              <div class="signature-divider">
-                <span class="signature-text">— Tim Aromas</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Bento Grid Palette Karakter Utama -->
-      <section class="palette-section">
-        <div class="container">
-          <div class="palette-header">
-            <span class="palette-sub">Fragrance Palette</span>
-            <h2 class="section-title">Karakter Utama Kami</h2>
-          </div>
-
-          <div class="bento-grid">
-            <!-- 1. Midnight Jasmine -->
-            <div class="bento-card tall">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVkC6Jn-jwl5lYs4W-ycSK-bX9DjjEz9WwNBp5diOSeg3_SwGTqVAET-cywZyc3-TH4t89eKL7YR8zSNZCnG_hQUCVF9dhQmhTGB0HHGYAgs6GWXkhb2Gl2_LQ7c4lvpl-qNrCbLyX7eK2JdHdJDlWo0_4lbytOloFgwrfEjhqo2c-JtaVxGD_Uzj1_iIdtWJuQwNmHGHJep6N4YC4rJ0jevhL7B0pShlYKY08lbcmDQH6OYTF_gPNZCYt8EyA17UopAOKBS7dpoXy"
-                alt="Midnight Jasmine"
-                class="bento-img"
-              />
-              <div class="bento-overlay">
-                <h3 class="bento-card-title">Midnight Jasmine</h3>
-                <span class="bento-card-meta">Floral & Intimate</span>
-              </div>
-            </div>
-
-            <!-- 2. Smoky Oud -->
-            <div class="bento-card wide">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_K8Ykd53PPGovQmg_P7BqVsGnVw7HfNqzreaUAc7w_LkkBcfmf0Rgli76_K-B8zRbSyymxKW9jIrXZGgm5aMhHrDzu3zJmqoQGqMqZ6d2OBV1wnrTZfFwRgug1HTYZtsW_ykpT76LrezL2Lc8Pj37_h6K1VCoXTzIzHPhpI604j55p-E1BVoo2TU4AixKXV085ZB6kjaloEZMQgDEdCzrYYYfxwK2cbshRxVRO3jV7Asxk1OPal-TIgBElS4Wjaogn_nc-cdqa3ig"
-                alt="Smoky Oud"
-                class="bento-img"
-              />
-              <div class="bento-overlay">
-                <h3 class="bento-card-title">Smoky Oud</h3>
-                <span class="bento-card-meta">Woody & Deep</span>
-              </div>
-            </div>
-
-            <!-- 3. Zesty Bergamot -->
-            <div class="bento-card">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa_YSGXZ7VvsBYWiGs6cWlF8JzDUl_LqOYb36elaTUsUBX7G27OxQ1BnAKE9cb1QCyd-lRu7w536K7GREWvLUFLq_VP6PQB3MXZA5UwTaTucEMRSKd3PQJ1iMfkPowpeLJi22vgX0X2mOOQMDQnfGPEwBY7Zo8A_-yEUzyrXGC1MI84pFPiwLtfTmQvrMlUDSa3AEohY9TYlqw-DFshGN4Ums2a0wmXENhgDwaKYaL6Kv-LjfIIHUu4UnARJ06OLb-Rjd9MohtgZC8"
-                alt="Zesty Bergamot"
-                class="bento-img"
-              />
-              <div class="bento-overlay">
-                <h3 class="bento-card-title">Zesty Bergamot</h3>
-                <span class="bento-card-meta">Citrus & Fresh</span>
-              </div>
-            </div>
-
-            <!-- 4. Spiced Vanilla -->
-            <div class="bento-card">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFc4yHVMioVkC86wpS8yCXrcejVUTTqgn-86pBkYID5Q9kuxVSyik9TvT8gYKOM-qIJhzkHh61pibMPCIPw3Oq-fhNbZkNMhSYv2JGhgu-BBozOstOw7yvBmR3bmupoOtqzKnJWQoBeJy9tXlqUk_Ty0304DCrMkRtO0mvvk7xlxfNokDca4vr3DM5YYBo0oVyiKGMsGmThqKKX8YAfA2KGkbcD15dLof7j_86i5V24xOhpecLJPhaN8tPManogYXfw1uBoi3ra0WQ"
-                alt="Spiced Vanilla"
-                class="bento-img"
-              />
-              <div class="bento-overlay">
-                <h3 class="bento-card-title">Spiced Vanilla</h3>
-                <span class="bento-card-meta">Warm & Spiced</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Kontak & Formulir Interaktif -->
-      <section class="contact-section">
-        <div class="container">
-          <div class="grid-2col">
-            <!-- Detail Kontak Kiri -->
-            <div class="contact-text-block">
-              <h2
-                class="section-title"
-                style="font-size: 40px; margin-bottom: 24px"
-              >
-                Mari Bicara Tentang Aroma.
-              </h2>
-              <p
-                class="editorial-p"
-                style="font-size: 18px; margin-bottom: 40px"
-              >
-                Ada pertanyaan mengenai koleksi kami atau ingin konsultasi aroma
-                yang tepat untuk Anda? Tim kami siap membantu.
-              </p>
-
-              <div class="contact-meta">
-                <!-- Alamat -->
-                <div class="meta-item">
-                  <div class="meta-icon-box">
-                    <span class="material-symbols-outlined">location_on</span>
-                  </div>
-                  <div class="meta-desc-box">
-                    <h4 class="meta-item-title">Kantor Pusat</h4>
-                    <p class="meta-item-desc">
-                      Jl. Wangi Mewah No. 45, Kebayoran Baru, Jakarta Selatan,
-                      12160
-                    </p>
-                  </div>
-                </div>
-                <!-- Email -->
-                <div class="meta-item">
-                  <div class="meta-icon-box">
-                    <span class="material-symbols-outlined">mail</span>
-                  </div>
-                  <div class="meta-desc-box">
-                    <h4 class="meta-item-title">Email</h4>
-                    <p class="meta-item-desc">hello@aromasparfume.com</p>
-                  </div>
-                </div>
-                <!-- Media Sosial -->
-                <div class="meta-item">
-                  <div class="meta-icon-box">
-                    <span class="material-symbols-outlined">share</span>
-                  </div>
-                  <div class="meta-desc-box">
-                    <h4 class="meta-item-title">Media Sosial</h4>
-                    <ul class="social-links">
-                      <li><a href="#" target="_blank">Instagram</a></li>
-                      <li><a href="#" target="_blank">TikTok</a></li>
-                      <li><a href="#" target="_blank">LinkedIn</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Formulir Pengiriman Django -->
-            <div class="form-wrapper">
-              <form method="POST" action="">
-                <!-- CSRF Token Wajib Django untuk Keamanan Payload -->
-                {% csrf_token %}
-
-                <div class="form-group">
-                  <label class="form-label" for="id_nama_lengkap"
-                    >Nama Lengkap</label
-                  >
-                  <input
-                    type="text"
-                    id="id_nama_lengkap"
-                    name="nama_lengkap"
-                    class="form-input"
-                    placeholder="Masukkan nama Anda"
-                    required
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="id_email">Alamat Email</label>
-                  <input
-                    type="email"
-                    id="id_email"
-                    name="email"
-                    class="form-input"
-                    placeholder="anda@email.com"
-                    required
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="id_pesan">Pesan</label>
-                  <textarea
-                    id="id_pesan"
-                    name="pesan"
-                    class="form-input"
-                    placeholder="Bagaimana kami bisa membantu Anda?"
-                    rows="4"
-                    required
-                  ></textarea>
-                </div>
-
-                <button type="submit" class="form-btn">Kirim Pesan</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-      <div class="container footer-content">
-        <div class="footer-brand">
-          <h2 class="brand-font footer-logo">Aromas Parfume</h2>
-          <p class="footer-copy">© 2024 Aromas Parfume. Semua berhak wangi.</p>
-        </div>
-
-        <ul class="footer-links">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Shipping & Returns</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Wholesale</a></li>
-        </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <button class="icon-btn" aria-label="Shopping Bag">
+          <span class="material-symbols-outlined">shopping_bag</span>
+        </button>
+        <button class="icon-btn" aria-label="Account">
+          <span class="material-symbols-outlined">person</span>
+        </button>
       </div>
-    </footer>
-  </body>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-wrapper">
+      <img class="hero-bg-image" src="{% static 'pages/images/hero section.jpg' %}"
+        alt="Aromas Parfume Base Fragrance Glass Bottle" />
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="hero-box">
+          <span class="hero-badge">Exclusive Scent</span>
+          <h1 class="hero-title">Aromas Parfume</h1>
+          <p class="hero-tagline">"Semua berhak wangi"</p>
+
+          <div class="hero-actions">
+            <a href="{% url 'products' %}" class="btn-solid">Jelajahi Koleksi</a>
+            <a href="" class="btn-outline">Hubungi Kami</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Section (Kisah Di Balik Aroma) -->
+    <section class="editorial-section">
+      <div class="container">
+        <div class="editorial-grid">
+          <!-- Lembar Visual Kiri dengan frame artistik -->
+          <div class="editorial-img-side">
+            <div class="img-frame">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCLpfbTE-p9jBwZQ_FP6eaIpgQtdxNyH6Ia--Rlvpws-Hfkngfhf438A1V60K4d_rrSuA10-ICjXa9Bb0YxO7WgeOTgy33fNXUBFcyXmDt5lnKfOyDc9WQBLXxgbP77u3LsMoPpM_AFpW-JmxbgRB8lFyElQjaKLAvF1yTm3bSk9lhhfpOsfbboDDd1Ky4BBFaeKz54zl8wwwAK7yuTci5dbVhXQn9TQ4wmFSSGfzIWTKykkz_shpVb6WMeYwYMi-qiUxXNMG-vOUb"
+                alt="Aromas Parfume Olfactory Natural Ingredients" />
+            </div>
+          </div>
+
+          <!-- Content Deskripsi Kanan -->
+          <div class="editorial-text-side">
+            <h2 class="section-title">Kisah Di Balik Aroma</h2>
+            <div class="editorial-body">
+              <p class="editorial-p">
+                Kami percaya bahwa aroma bukan sekadar wewangian, melainkan
+                identitas yang melekat. Di Aromas Parfume, visi kami sederhana
+                namun mendalam:
+                <span class="highlight-italic">Semua berhak wangi.</span>
+              </p>
+              <p class="editorial-p">
+                Mewujudkan kemewahan yang dapat diakses, kami meracik setiap
+                botol dengan ketelitian seorang maestro. Menggunakan
+                bahan-bahan terbaik dari seluruh penjuru dunia, kami
+                menciptakan simfoni aroma yang bercerita tentang keanggunan,
+                keberanian, dan karakter unik Anda.
+              </p>
+              <p class="editorial-p">
+                Perjalanan kami dimulai dari keinginan untuk mendemokrasi
+                dunia wewangian premium. Tanpa kompromi pada kualitas, kami
+                menghadirkan pengalaman sensorik kelas atas untuk setiap momen
+                berharga dalam hidup Anda.
+              </p>
+            </div>
+            <div class="signature-divider">
+              <span class="signature-text">— Tim Aromas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Palette Karakter Utama -->
+    <section class="palette-section">
+      <div class="container">
+        <div class="palette-header">
+          <span class="palette-sub">Fragrance Palette</span>
+          <h2 class="section-title">Karakter Utama Kami</h2>
+        </div>
+
+        <div class="bento-grid">
+          <!-- 1. Midnight Jasmine -->
+          <div class="bento-card tall">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVkC6Jn-jwl5lYs4W-ycSK-bX9DjjEz9WwNBp5diOSeg3_SwGTqVAET-cywZyc3-TH4t89eKL7YR8zSNZCnG_hQUCVF9dhQmhTGB0HHGYAgs6GWXkhb2Gl2_LQ7c4lvpl-qNrCbLyX7eK2JdHdJDlWo0_4lbytOloFgwrfEjhqo2c-JtaVxGD_Uzj1_iIdtWJuQwNmHGHJep6N4YC4rJ0jevhL7B0pShlYKY08lbcmDQH6OYTF_gPNZCYt8EyA17UopAOKBS7dpoXy"
+              alt="Midnight Jasmine" class="bento-img" />
+            <div class="bento-overlay">
+              <h3 class="bento-card-title">Midnight Jasmine</h3>
+              <span class="bento-card-meta">Floral & Intimate</span>
+            </div>
+          </div>
+
+          <!-- 2. Smoky Oud -->
+          <div class="bento-card wide">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_K8Ykd53PPGovQmg_P7BqVsGnVw7HfNqzreaUAc7w_LkkBcfmf0Rgli76_K-B8zRbSyymxKW9jIrXZGgm5aMhHrDzu3zJmqoQGqMqZ6d2OBV1wnrTZfFwRgug1HTYZtsW_ykpT76LrezL2Lc8Pj37_h6K1VCoXTzIzHPhpI604j55p-E1BVoo2TU4AixKXV085ZB6kjaloEZMQgDEdCzrYYYfxwK2cbshRxVRO3jV7Asxk1OPal-TIgBElS4Wjaogn_nc-cdqa3ig"
+              alt="Smoky Oud" class="bento-img" />
+            <div class="bento-overlay">
+              <h3 class="bento-card-title">Smoky Oud</h3>
+              <span class="bento-card-meta">Woody & Deep</span>
+            </div>
+          </div>
+
+          <!-- 3. Zesty Bergamot -->
+          <div class="bento-card">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa_YSGXZ7VvsBYWiGs6cWlF8JzDUl_LqOYb36elaTUsUBX7G27OxQ1BnAKE9cb1QCyd-lRu7w536K7GREWvLUFLq_VP6PQB3MXZA5UwTaTucEMRSKd3PQJ1iMfkPowpeLJi22vgX0X2mOOQMDQnfGPEwBY7Zo8A_-yEUzyrXGC1MI84pFPiwLtfTmQvrMlUDSa3AEohY9TYlqw-DFshGN4Ums2a0wmXENhgDwaKYaL6Kv-LjfIIHUu4UnARJ06OLb-Rjd9MohtgZC8"
+              alt="Zesty Bergamot" class="bento-img" />
+            <div class="bento-overlay">
+              <h3 class="bento-card-title">Zesty Bergamot</h3>
+              <span class="bento-card-meta">Citrus & Fresh</span>
+            </div>
+          </div>
+
+          <!-- 4. Spiced Vanilla -->
+          <div class="bento-card">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFc4yHVMioVkC86wpS8yCXrcejVUTTqgn-86pBkYID5Q9kuxVSyik9TvT8gYKOM-qIJhzkHh61pibMPCIPw3Oq-fhNbZkNMhSYv2JGhgu-BBozOstOw7yvBmR3bmupoOtqzKnJWQoBeJy9tXlqUk_Ty0304DCrMkRtO0mvvk7xlxfNokDca4vr3DM5YYBo0oVyiKGMsGmThqKKX8YAfA2KGkbcD15dLof7j_86i5V24xOhpecLJPhaN8tPManogYXfw1uBoi3ra0WQ"
+              alt="Spiced Vanilla" class="bento-img" />
+            <div class="bento-overlay">
+              <h3 class="bento-card-title">Spiced Vanilla</h3>
+              <span class="bento-card-meta">Warm & Spiced</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak & Formulir Interaktif -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="grid-2col">
+          <!-- Detail Kontak Kiri -->
+          <div class="contact-text-block">
+            <h2 class="section-title" style="font-size: 40px; margin-bottom: 24px">
+              Mari Bicara Tentang Aroma.
+            </h2>
+            <p class="editorial-p" style="font-size: 18px; margin-bottom: 40px">
+              Ada pertanyaan mengenai koleksi kami atau ingin konsultasi aroma
+              yang tepat untuk Anda? Tim kami siap membantu.
+            </p>
+
+            <div class="contact-meta">
+              <!-- Alamat -->
+              <div class="meta-item">
+                <div class="meta-icon-box">
+                  <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <div class="meta-desc-box">
+                  <h4 class="meta-item-title">Kantor Pusat</h4>
+                  <p class="meta-item-desc">
+                    Jl. Wangi Mewah No. 45, Kebayoran Baru, Jakarta Selatan,
+                    12160
+                  </p>
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="meta-item">
+                <div class="meta-icon-box">
+                  <span class="material-symbols-outlined">mail</span>
+                </div>
+                <div class="meta-desc-box">
+                  <h4 class="meta-item-title">Email</h4>
+                  <p class="meta-item-desc">hello@aromasparfume.com</p>
+                </div>
+              </div>
+              <!-- Media Sosial -->
+              <div class="meta-item">
+                <div class="meta-icon-box">
+                  <span class="material-symbols-outlined">share</span>
+                </div>
+                <div class="meta-desc-box">
+                  <h4 class="meta-item-title">Media Sosial</h4>
+                  <ul class="social-links">
+                    <li><a href="#" target="_blank">Instagram</a></li>
+                    <li><a href="#" target="_blank">TikTok</a></li>
+                    <li><a href="#" target="_blank">LinkedIn</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulir Pengiriman Django -->
+          <div class="form-wrapper">
+            <form method="POST" action="">
+              <!-- CSRF Token Wajib Django untuk Keamanan Payload -->
+              {% csrf_token %}
+
+              <div class="form-group">
+                <label class="form-label" for="id_nama_lengkap">Nama Lengkap</label>
+                <input type="text" id="id_nama_lengkap" name="nama_lengkap" class="form-input"
+                  placeholder="Masukkan nama Anda" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="id_email">Alamat Email</label>
+                <input type="email" id="id_email" name="email" class="form-input" placeholder="anda@email.com"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="id_pesan">Pesan</label>
+                <textarea id="id_pesan" name="pesan" class="form-input" placeholder="Bagaimana kami bisa membantu Anda?"
+                  rows="4" required></textarea>
+              </div>
+
+              <button type="submit" class="form-btn">Kirim Pesan</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h2 class="brand-font footer-logo">Aromas Parfume</h2>
+        <p class="footer-copy">© 2024 Aromas Parfume. Semua berhak wangi.</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Shipping & Returns</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Wholesale</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
 </html>
